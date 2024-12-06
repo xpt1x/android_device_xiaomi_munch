@@ -98,6 +98,10 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    libexif.vendor \
+    libgui.vendor \
+    liblz4.vendor \
+    libutilscallstack.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
     libcamera2ndk_vendor \
@@ -297,6 +301,14 @@ PRODUCT_COPY_FILES += \
 # Platform
 TARGET_BOARD_PLATFORM := kona
 
+# QMI
+PRODUCT_PACKAGES += \
+    libcurl.vendor \
+    libjson \
+    libjsoncpp.vendor \
+    libsqlite.vendor \
+    libvndfwk_detect_jni.qti
+
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
@@ -406,3 +418,7 @@ PRODUCT_COPY_FILES += \
 # WiFi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+
+# Wifi Display
+PRODUCT_PACKAGES += \
+    libpng.vendor
